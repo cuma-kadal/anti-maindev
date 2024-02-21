@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti Dev</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <style>
+    body {
+      background-color: #313942;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 100px); /* Mengurangi tinggi watermark */
+      justify-content: center;
+      text-align: center;
+    }
+    .logo {
+      color: #e7ebf2;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: ghostMove 2s infinite alternate;
+      cursor: pointer; /* Add cursor pointer for clickable element */
+    }
+    @keyframes ghostMove {
+      from {
+        transform: translateY(-80px);
+      }
+      to {
+        transform: translateY(80px);
+      }
+    }
+    /* Watermark styling */
+    .watermark {
+      position: absolute;
+      bottom: 20px; /* Jarak dari bawah */
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5); /* Warna dengan transparansi */
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .watermark a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .watermark a:hover {
+      color: #00FF94;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo" id="ghostLogo"><i class="fas fa-ghost"></i></div>
+  </main>
+  <!-- Watermark -->
+  <div class="watermark">Follow me on<br>
+  <br><a href="https://www.instagram.com/_rynxd" target="_blank"><i class="fab fa-instagram"></i> _rynxd</a></div>
+  
+  <!-- Notifikasi -->
+  <div id="notification" class="notification"></div>
+
+  <script>
+    document.getElementById("ghostLogo").addEventListener("click", function() {
+      // Change color
+      this.style.color = "#00FF94"; // Change to desired color
+
+      // Redirect to another page
+      window.location.href = "/execute"; // Change to desired URL
+    });
+  </script>
+</body>
+</html>
